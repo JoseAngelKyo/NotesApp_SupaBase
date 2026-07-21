@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotesApp — Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fa-solid fa-note-sticky"></i></div>
+                <div>
+                    <h1>Mis Notas & Recuerdos</h1>
+                    <p class="subtitle">Gestiona tus ideas guardadas en la nube</p>
+                </div>
+            </div>
+
+            <div id="status-message" class="status-box status-loading">
+                <i class="fa-solid fa-spinner fa-spin"></i> Conectando con Supabase...
+            </div>
+        </header>
+
+        <section class="form-section">
+            <form id="note-form" class="card-form">
+                <div class="form-header">
+                    <h2><i class="fa-solid fa-pen-to-square"></i> Crear nueva nota</h2>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-heading input-icon"></i>
+                    <input type="text" id="titulo" placeholder="Título de la nota..." required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-align-left input-icon textarea-icon"></i>
+                    <textarea id="contenido" placeholder="Escribe tu recuerdo o nota aquí..." rows="3"
+                        required></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <div class="select-wrapper">
+                        <i class="fa-solid fa-tag select-icon"></i>
+                        <select id="categoria">
+                            <option value="General">🏷️ General</option>
+                            <option value="Ideas">💡 Ideas</option>
+                            <option value="Personal">👤 Personal</option>
+                            <option value="Estudio">🎓 Estudio</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="btn-guardar" class="btn-primary">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> Guardar Nota
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <main class="notes-section">
+            <div class="section-title">
+                <h2><i class="fa-solid fa-layer-group"></i> Tus Notas Guardadas</h2>
+            </div>
+
+            <div id="notes-grid" class="grid"></div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="SupaBase.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

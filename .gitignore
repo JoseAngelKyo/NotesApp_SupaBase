@@ -1,0 +1,6 @@
+# Archivo de configuración con llaves secretas
+config.js
+
+# Archivos del sistema operativo o editores
+.DS_Store
+.vscode/
