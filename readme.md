@@ -1,4 +1,4 @@
-# 📝 Proyecto 01: NotesApp con Supabase
+# NotesApp con Supabase
 
 ⭐ **5to Semestre - UPC** | **Julio 2026** 
 
